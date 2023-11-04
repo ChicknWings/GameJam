@@ -11,9 +11,4 @@ public class PointInTime : MonoBehaviour
         rotation = _rotation; 
     
     }
-
-
-
-
-
 }

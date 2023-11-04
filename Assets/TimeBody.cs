@@ -9,13 +9,11 @@ public class TimeBody : MonoBehaviour
     List<PointInTime> pointsInTime;
     Rigidbody rb;
 
-
     void Start()
     {
         pointsInTime = new List<PointInTime>();
         rb= GetComponent<Rigidbody>();
     }
-
 
     void Update()
     {
@@ -31,7 +29,6 @@ public class TimeBody : MonoBehaviour
             Rewind();
         else
             Record();
-            
     }
     private void Rewind()
     {
@@ -46,9 +43,6 @@ public class TimeBody : MonoBehaviour
         {
             StopRewind();
         }
-
-
-
     }
     void Record() 
     {
