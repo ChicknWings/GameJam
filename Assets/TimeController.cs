@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeControllet : MonoBehaviour
+public class TimeController : MonoBehaviour
 {
     //status
     public bool isRewinding = false;
@@ -12,6 +12,9 @@ public class TimeControllet : MonoBehaviour
     private List<Vector3> positions;
     private List<Quaternion> rotations;
     public GameObject playerPrefab;
+
+    //about bullets
+    private List<BulletController> bullets = new List<BulletController>();
 
     //material
     public Material rewindMaterial;
@@ -66,6 +69,10 @@ public class TimeControllet : MonoBehaviour
             rb.isKinematic = true;
         }
         StartCoroutine(Rewind(rewindPlayer));
+        foreach (var bullet in bullets)
+        {
+            bullet.StartRewind(); // each bullet start rewind
+        }
     }
     IEnumerator Rewind(GameObject rewindPlayer)
     {
@@ -83,5 +90,15 @@ public class TimeControllet : MonoBehaviour
         positions.Clear();
         rotations.Clear();
         Destroy(rewindPlayer);
+    }
+    public void RegisterBullet(BulletController bullet)
+    {
+        bullets.Add(bullet);
+    }
+
+    // 当子弹被销毁时，将其从列表中移除
+    public void UnregisterBullet(BulletController bullet)
+    {
+        bullets.Remove(bullet);
     }
 }
