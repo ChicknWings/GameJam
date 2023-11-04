@@ -9,6 +9,8 @@ public class TimeBody : MonoBehaviour
     List<PointInTime> pointsInTime;
     Rigidbody rb;
 
+    public GameObject characterPrefab;
+
     void Start()
     {
         pointsInTime = new List<PointInTime>();
