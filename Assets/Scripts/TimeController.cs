@@ -96,7 +96,7 @@ public class TimeController : MonoBehaviour
         bullets.Add(bullet);
     }
 
-    // 当子弹被销毁时，将其从列表中移除
+    // When a bullet is destroyed, remove it from the list
     public void UnregisterBullet(BulletController bullet)
     {
         bullets.Remove(bullet);

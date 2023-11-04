@@ -66,7 +66,7 @@ public class BulletController : MonoBehaviour
 
     public void StopRewind()
     {
-        isRewinding = false; // 停止倒流
-        positions.Clear(); // 清空位置列表
+        isRewinding = false; 
+        positions.Clear(); 
     }
 }
