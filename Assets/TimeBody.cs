@@ -6,12 +6,14 @@ using UnityEngine;
 public class TimeBody : MonoBehaviour
 {
     public bool isRewinding = false;
-    List<Vector3> positions;
-    public GameObject cube;
+    List<PointInTime> pointsInTime;
+    Rigidbody rb;
+
+
     void Start()
     {
-        positions = new List<Vector3>();
-
+        pointsInTime = new List<PointInTime>();
+        rb= GetComponent<Rigidbody>();
     }
 
 
@@ -33,22 +35,35 @@ public class TimeBody : MonoBehaviour
     }
     private void Rewind()
     {
-        transform.position = positions[0];
-        positions.RemoveAt(0);
+        if (pointsInTime.Count > 0)
+        {
+            PointInTime pointInTime = pointsInTime[0];
+            transform.position = pointInTime.position;
+            transform.rotation = pointInTime.rotation;
+            pointsInTime.RemoveAt(0);
+        }
+        else 
+        {
+            StopRewind();
+        }
+
+
 
     }
     void Record() 
     {
-        positions.Insert(0, transform.position);
+        pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
     }
 
     public void StartRewind() 
     {
         isRewinding = true;
+        rb.isKinematic = true;
     }
 
     public void StopRewind()
     {
         isRewinding = false;
+        rb.isKinematic = false;
     }
 }
