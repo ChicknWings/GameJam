@@ -46,17 +46,16 @@ public class BulletController : MonoBehaviour
             }
         }
     }
-
-    void FixedUpdate()
-    {
-        
-    }
-
+    
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
             hitSomething = true;
+        }
+        if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
+        {
+            enemyComponent.TakeDamage(3);
         }
     }
     public void StartRewind()
