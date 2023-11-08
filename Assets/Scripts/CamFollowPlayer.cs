@@ -5,7 +5,7 @@ using UnityEngine;
 public class CamFollowPlayer : MonoBehaviour
 {
     [SerializeField] Rigidbody playerRb;
-    [SerializeField] float y = 1.5f;
+    [SerializeField] float y = -10f;
     // Start is called before the first frame update
     void Start()
     {

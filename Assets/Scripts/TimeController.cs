@@ -12,6 +12,8 @@ public class TimeController : MonoBehaviour
     private List<Vector3> positions;
     private List<Quaternion> rotations;
     public GameObject playerPrefab;
+    //public float slowdownFactor = 0.3f;
+    //public float slowdownLength = 1.5f;
 
     //about bullets
     private List<BulletController> bullets = new List<BulletController>();
@@ -32,6 +34,9 @@ public class TimeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             StartRewind();
+            //startSloMo();
+            //new WaitForSecondsRealtime(1);
+            //endSloMo();
         }
         /*
         if (Input.GetKeyUp(KeyCode.Z))
@@ -47,6 +52,20 @@ public class TimeController : MonoBehaviour
             Record();
         }
     }
+
+    /*void startSloMo()
+    {
+        Time.timeScale = slowdownFactor;
+        Time.fixedDeltaTime = Time.timeScale * 0.2f;
+        
+    }
+
+    void endSloMo()
+    {
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = Time.timeScale * 1f;
+    }
+    */
     void Record()
     {
         positions.Insert(0, player.position);

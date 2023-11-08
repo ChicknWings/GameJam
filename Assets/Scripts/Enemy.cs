@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damageAmount) 
     {
         currentHP -= damageAmount;
-        Debug.Log(currentHP);
+        //Debug.Log(currentHP);
         if (currentHP <= 0)
         {
             Destroy(gameObject);
