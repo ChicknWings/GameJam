@@ -40,4 +40,13 @@ public class PlayerController : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * 1000f);
     }
+
+    private void OnTriggerEnter(Collider ammoBall)
+    {
+        if (ammoBall.gameObject.tag == "AmmoCollectible")
+        {
+            BulletSpowner.ammoCount = 0;
+            Destroy(ammoBall.gameObject);
+        }
+    }
 }

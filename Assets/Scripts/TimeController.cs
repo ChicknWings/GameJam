@@ -21,6 +21,9 @@ public class TimeController : MonoBehaviour
     //material
     public Material rewindMaterial;
 
+    //ammo collectible 
+    [SerializeField] GameObject ammoCollectible;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -106,9 +109,15 @@ public class TimeController : MonoBehaviour
         }
 
         isRewinding = false;
+        //positions.Clear();
+        //rotations.Clear();
+
+        //Replace rewind player with an ammo collectible
+        Instantiate(ammoCollectible, rewindPlayer.transform.position, Quaternion.identity);
+        Destroy(rewindPlayer);
+        
         positions.Clear();
         rotations.Clear();
-        Destroy(rewindPlayer);
     }
     public void RegisterBullet(BulletController bullet)
     {
