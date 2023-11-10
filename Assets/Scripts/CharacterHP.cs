@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CharacterHP : MonoBehaviour
 {
     [SerializeField]public int maxHP;
     public int currentHP;
+
+    public TextMeshProUGUI playerHPText;
 
     private void Start()
     {
@@ -14,7 +17,10 @@ public class CharacterHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(playerHPText != null)
+        {
+            playerHPText.text = currentHP.ToString();
+        }
     }
 
     public void TakeDamage(int damageAmount)
