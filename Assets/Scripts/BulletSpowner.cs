@@ -17,8 +17,12 @@ public class BulletSpowner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         ammoCountTextDisplay = maxAmmo - ammoCount;
-        ammoCountText.text = ammoCountTextDisplay.ToString();
+        if (ammoCountText != null)
+            ammoCountText.text = ammoCountTextDisplay.ToString();
+        
+
 
         if (Input.GetMouseButtonDown(0) && ammoCount < maxAmmo) // mouse left click
         {
