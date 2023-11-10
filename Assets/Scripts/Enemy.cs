@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
+    public int damage = 10;
+
     private void Start()
     {
         currentHP = maxHP;
@@ -31,7 +33,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<CharacterHP>(out CharacterHP enemyComponent))
         {
-            enemyComponent.TakeDamage(10);
+            enemyComponent.TakeDamage(damage);
         }
     }
 }

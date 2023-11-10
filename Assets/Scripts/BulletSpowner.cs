@@ -29,7 +29,7 @@ public class BulletSpowner : MonoBehaviour
             ammoCount++;
 
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-
+            bullet.SetActive(true);
             //Debug.Log(4 - ammoCount);
 
         }

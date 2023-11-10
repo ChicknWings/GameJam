@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5081658726139622
 Transform:
   m_ObjectHideFlags: 0
@@ -123,6 +123,8 @@ MonoBehaviour:
   isRewinding: 0
   timeController: {fileID: 0}
   hitSomething: 0
+  bulletDamage: 3
+  backwardDamageAdd: 10
 --- !u!54 &8891395357602345119
 Rigidbody:
   m_ObjectHideFlags: 0

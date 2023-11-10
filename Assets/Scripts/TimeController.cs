@@ -5,7 +5,7 @@ using UnityEngine;
 public class TimeController : MonoBehaviour
 {
     //status
-    public bool isRewinding = false;
+    public static bool isRewinding = false;
 
     //about player
     public Transform player;
