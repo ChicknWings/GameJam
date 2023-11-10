@@ -10,6 +10,9 @@ public class BulletController : MonoBehaviour
 
     private List<Vector3> positions;
     public bool hitSomething = false;
+
+    [SerializeField] int bulletDamage = 3;
+    [SerializeField] int backwardDamageAdd = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,9 +56,21 @@ public class BulletController : MonoBehaviour
         {
             hitSomething = true;
         }
-        if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
+
         {
-            enemyComponent.TakeDamage(3);
+            if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
+            {
+                if (TimeController.isRewinding == false)
+                {
+                    enemyComponent.TakeDamage(bulletDamage);
+                    Debug.Log("Forward Damage");
+                }
+                else
+                {
+                    enemyComponent.TakeDamage(bulletDamage + backwardDamageAdd);
+                    Debug.Log("Backward Damage");
+                }
+            }
         }
     }
     public void StartRewind()
