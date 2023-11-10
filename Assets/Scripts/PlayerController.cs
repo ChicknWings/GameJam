@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
+    public Rigidbody rb;
 
     public Camera mainCamera;
 
@@ -23,11 +24,15 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
+        rb.freezeRotation = true;
         Vector3 move = new Vector3(h, 0f, v) * moveSpeed * Time.deltaTime;
         transform.position += move;
+
+        rb.freezeRotation = false;
     }
 
     private void Turn()

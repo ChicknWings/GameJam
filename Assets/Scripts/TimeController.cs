@@ -78,7 +78,7 @@ public class TimeController : MonoBehaviour
     void StartRewind()
     {
         GameObject rewindPlayer = Instantiate(playerPrefab, player.position, player.rotation);
-        rewindPlayer.GetComponent<Renderer>().material = rewindMaterial;
+        //rewindPlayer.GetComponent<Renderer>().material = rewindMaterial;
         // Disable any scripts that could affect the rewind player
         MonoBehaviour[] scripts = rewindPlayer.GetComponents<MonoBehaviour>();
         foreach (MonoBehaviour script in scripts)
