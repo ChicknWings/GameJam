@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &723073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5666676571338047197, guid: f06009b4f09eec74fb80ba0355920ca0, type: 3}
+  m_PrefabInstance: {fileID: 846704719010926352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2884691 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2869727791305073089, guid: 1928e694310afbf42b812898d6c70f9a, type: 3}
@@ -8304,6 +8309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterC
       objectReference: {fileID: 0}
+    - target: {fileID: 5666676571338047197, guid: f06009b4f09eec74fb80ba0355920ca0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8115842102933123567, guid: f06009b4f09eec74fb80ba0355920ca0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.16
@@ -8359,7 +8368,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5666676571338047197, guid: f06009b4f09eec74fb80ba0355920ca0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3233508248762386173}
   m_SourcePrefab: {fileID: 100100000, guid: f06009b4f09eec74fb80ba0355920ca0, type: 3}
 --- !u!1001 &2271684074508412366
 PrefabInstance:
@@ -8423,7 +8435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8024754786141551392, guid: 1928e694310afbf42b812898d6c70f9a, type: 3}
       propertyPath: m_StoppingDistance
-      value: 2.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8772370079491208727, guid: 1928e694310afbf42b812898d6c70f9a, type: 3}
       propertyPath: enemy
@@ -8519,6 +8531,20 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 8738184293337538329, guid: f06009b4f09eec74fb80ba0355920ca0, type: 3}
   m_PrefabInstance: {fileID: 846704719010926352}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3233508248762386173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff46b8f9029f7fd4fb7ad82f37029494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
